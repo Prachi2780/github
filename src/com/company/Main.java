@@ -17,6 +17,7 @@ public class Main
         System.out.println(index(arr));
     }
 
+
     static int index(int[][] arr)
     {
         int max=0;
