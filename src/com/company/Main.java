@@ -3,23 +3,36 @@ import java.util.*;
 // dragon problem codeforces
 public class Main
 {
-    public static void main(String[] args)
-    {
-        Scanner s=new Scanner(System.in);
-        int k=s.nextInt();
-        int l=s.nextInt();
-        int m=s.nextInt();
-        int n=s.nextInt();
-        int d=s.nextInt();
-
-        int c=0;
-        for(int i=1;i<=d;i++)
+        public static void main(String[] args)
         {
-            if(i%k==0 || i%l==0 || i%m==0 || i%n==0)
+            Scanner s=new Scanner(System.in);
+            int[][] arr=new int[5][5];
+            for(int i1=0;i1<5;i1++)
             {
-                c++;
+                for(int j1=0;j1<5;j1++)
+                {
+                    arr[i1][j1]=s.nextInt();
+                }
             }
+            System.out.println(index(arr));
         }
-        System.out.println(c);
+
+        static int index(int[][] arr)
+        {
+            int max=0;
+            int c=0;
+            for(int i=0;i<5;i++)
+            {
+                for(int j=0;j<5;j++)
+                {
+
+                    if(arr[i][j]>max)
+                    {
+                        c=Math.abs(2-i)+Math.abs(2-j);
+                        break;
+                    }
+                }
+            }
+            return c;
+        }
     }
-}
